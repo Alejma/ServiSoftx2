@@ -1,0 +1,40 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreatePaquetesTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('paquetes', function (Blueprint $table) {
+            $table->increments('id');
+
+            $table->integer('Peso');
+            $table->string('Estado');
+            $table->string('Direccion_Remitente');
+            $table->string('Nombre_Remitente');
+            $table->integer('NDocumento');
+            $table->string('Direccion_Llegada');
+            $table->string('Nombre_Remitido');
+
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('paquetes');
+    }
+}

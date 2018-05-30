@@ -6,19 +6,15 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h1 align="center">Especificaciones del paquete # {{ $paquete->id}}</h1>
+                    <h1 align="center">Especificaciones del paquete # {{ $user->id}}</h1>
                 </div>
 
                 <div class="panel-body">
 
-                    <p><strong>Id: </strong>{{ $paquete->id}}</p>
-                    <p><strong>Peso: </strong>{{ $paquete->Peso}}</p>
-                    <p><strong>Estado: </strong>{{ $paquete->Estado}}</p>
-                    <p><strong>Dirección remitente: </strong>{{ $paquete->Direccion_Remitente}}</p>
-                    <p><strong>Nombre remitente: </strong>{{ $paquete->Nombre_Remitente}}</p>
-                    <p><strong>Número de documento: </strong>{{ $paquete->NDocumento}}</p>
-                    <p><strong>Dirección llegada: </strong>{{ $paquete->Direccion_Llegada}}</p>
-                    <p><strong>Nombre remitido: </strong>{{ $paquete->Nombre_Remitido }}</p>
+                    <p><strong>Id: </strong>{{ $user->id}}</p>
+                    <p><strong>Nombre: </strong>{{ $user->name}}</p>
+                    <p><strong>Correo electronico: </strong>{{ $user->email}}</p>
+                    
                     
 
                 </div>

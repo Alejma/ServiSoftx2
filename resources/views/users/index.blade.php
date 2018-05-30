@@ -6,13 +6,9 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Paquetes
+                    Usuarios
 
-                    @can('packages.create')
-                    <a href="{{ route('packages.create')}}" class="btn btn-sm btn-primary pull-right">
-                        Agregar
-                    </a>
-                    @endcan
+                  
                 </div>
 
                 <div class="panel-body">
@@ -21,35 +17,29 @@
                         <thead>
                             <tr>
                                 <th width="10px">ID</th>
-                                <th>Peso</th>
-                                <th>Estado</th>
-                            
-                                <th>Nombre remitente</th>
-                                <th>N° Documento</th>
+                                <th>Nombre</th>
                                
-                                <th colspan="3">//</th>
+                               
+                                <th colspan="3">--</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($paquetes as $paquete)
+                            @foreach($users as $user)
                             <tr>
-                                <td>{{ $paquete->id }}</td>
-                                <td>{{ $paquete->Peso}} kg</td>
-                                <td>{{ $paquete->Estado}}</td>
-                                <td>{{ $paquete->Nombre_Remitente}}</td>
-                                <td>{{ $paquete->NDocumento}}</td>
-                                
+                                <td>{{ $user->id }}</td>
+                                <td>{{ $user->name}} </td>
+                             
                                 <td>
-                                    @can('packages.show')
-                                    <a href="{{ route('packages.show', $paquete->id)}}"
+                                    @can('users.show')
+                                    <a href="{{ route('users.show', $user->id)}}"
                                      class="btn btn-sm btn-default">
                                      Ver    
                                         </a>
                                     @endcan
                                     </td>
                                     <td>
-                                    @can('packages.edit')
-                                    <a href="{{ route('packages.edit', $paquete->id)}}"
+                                    @can('users.edit')
+                                    <a href="{{ route('users.edit', $user->id)}}"
                                      class="btn btn-sm btn-default">
                                      Editar   
                                         </a>
@@ -60,7 +50,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {{ $paquetes->render()}}
+                    {{ $users->render()}}
                     
                         
                 </div>

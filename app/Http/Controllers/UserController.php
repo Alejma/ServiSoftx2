@@ -16,7 +16,7 @@ class UserController extends Controller
     {
        $users = User::paginate();
 
-       return view('packages.index', compact('users'));
+       return view('users.index', compact('users'));
     }
 
 
@@ -29,7 +29,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('packages.show', compact('user'));
+        return view('users.show', compact('user'));
     }
 
     /**
@@ -40,7 +40,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('packages.edit', compact('user'));
+        return view('users.edit', compact('user'));
     }
 
     /**
@@ -54,7 +54,7 @@ class UserController extends Controller
     {
         $users->update($request->all());
 
-        return redirect()->route('packages.index', $users->id)
+        return redirect()->route('users.index', $users->id)
              ->with('info', 'Producto actualizado con éxito');
     }
 

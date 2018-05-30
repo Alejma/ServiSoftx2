@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Caffeinated\Shinobi\Models\Role;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -16,7 +17,7 @@ class UserController extends Controller
     {
        $users = User::paginate();
 
-       return view('users.index', compact('users'));
+       return view('users.index', compact('users', 'roles'));
     }
 
 
@@ -40,7 +41,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('users.edit', compact('user'));
+        $roles = Role::get();
+        return view('users.edit', compact('user', 'roles'));
     }
 
     /**
@@ -52,10 +54,15 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        $users->update($request->all());
+        //Actualizar usuarios
+        $user->update($request->all());
 
-        return redirect()->route('users.index', $users->id)
-             ->with('info', 'Producto actualizado con éxito');
+
+        //Actualizar Roles
+        $user->roles()->sync($request->get('roles'));
+
+        return redirect()->route('users.index', $user->id)
+             ->with('info', 'Usuario actualizado con éxito');
     }
 
     /**

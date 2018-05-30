@@ -6,14 +6,14 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h1 align="center">Editando el paquete</h1>
+                    <h1 align="center">Editando el usuario</h1>
                 </div>
 
                 <div class="panel-body">
-                	{!! Form::model($paquete, ['route' => ['packages.update', $paquete->id],
+                	{!! Form::model($user, ['route' => ['users.update', $user->id],
                 	'method' => 'PUT']) !!}
 
-                    @include('packages.partials.form')
+                    @include('users.partials.form')
 
                 	{!! Form::close() !!}
 

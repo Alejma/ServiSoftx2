@@ -29,7 +29,7 @@
                                 <td>{{ $user->id }}</td>
                                 <td>{{ $user->name}} </td>
                              
-                                <td>
+                                <td width="10 px">
                                     @can('users.show')
                                     <a href="{{ route('users.show', $user->id)}}"
                                      class="btn btn-sm btn-default">
@@ -37,7 +37,7 @@
                                         </a>
                                     @endcan
                                     </td>
-                                    <td>
+                                    <td width="10 px">
                                     @can('users.edit')
                                     <a href="{{ route('users.edit', $user->id)}}"
                                      class="btn btn-sm btn-default">

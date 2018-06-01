@@ -36,7 +36,7 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Lugar izquierdo del Navbar -->
                     <ul class="nav navbar-nav">
-                        @can('paquetes.index')
+                        @can('packages.index')
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('packages.index')}}">Paquetes</a>
                         </li>

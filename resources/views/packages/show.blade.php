@@ -6,7 +6,7 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h1 align="center">Especificaciones del package # {{ $paquete->id}}</h1>
+                    <h1 align="center">Especificaciones del paquete # {{ $paquete->id}}</h1>
                 </div>
 
                 <div class="panel-body">

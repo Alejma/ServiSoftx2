@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Paquete;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class PaqueteController extends Controller
 {
@@ -18,6 +19,21 @@ class PaqueteController extends Controller
 
        return view('packages.index', compact('paquetes'));
     }
+
+
+    public function pdf()
+    {        
+        /**
+         * toma en cuenta que para ver los mismos 
+         * datos debemos hacer la misma consulta
+        **/
+        $paquetes = Paquete::all(); 
+
+        $pdf = PDF::loadView('packages.pdf', compact('paquetes'));
+
+        return $pdf->download('listado.pdf');
+    }
+
 
     /**
      * Show the form for creating a new resource.

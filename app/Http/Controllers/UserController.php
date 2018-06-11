@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Caffeinated\Shinobi\Models\Role;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class UserController extends Controller
 {
@@ -19,6 +20,20 @@ class UserController extends Controller
 
        return view('users.index', compact('users', 'roles'));
     }
+
+    public function pdf()
+    {        
+        /**
+         * toma en cuenta que para ver los mismos 
+         * datos debemos hacer la misma consulta
+        **/
+        $users = User::all(); 
+
+        $pdf = PDF::loadView('users.pdf', compact('users'));
+
+        return $pdf->download('listado.pdf');
+    }
+
 
 
 

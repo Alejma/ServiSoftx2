@@ -53,6 +53,9 @@ Route::middleware(['auth'])->group(function(){
 	Route::get('paquetes', 'PaqueteController@index')->name('packages.index')
 	        ->middleware('permission:packages.index');
 
+	Route::get('paquetes/pdf', 'PaqueteController@pdf')->name('packages.pdf')
+		    ->middleware('permission:packages.show');
+
 	Route::get('paquetes/create', 'PaqueteController@create')->name('packages.create')
 	        ->middleware('permission:packages.create');
 
@@ -72,6 +75,9 @@ Route::middleware(['auth'])->group(function(){
 	//Usuarios
 	Route::get('users', 'UserController@index')->name('users.index')
 	        ->middleware('permission:users.index');
+
+	Route::get('users/pdf', 'UserController@pdf')->name('users.pdf')
+		    ->middleware('permission:users.show');
 
 	Route::put('users/{user}', 'UserController@update')->name('users.update')
 	        ->middleware('permission:users.edit');

@@ -8,7 +8,10 @@
                 <div class="panel-heading">
                     Usuarios
 
-                  
+                    @can('packages.show')
+                    <a class="btn btn-sm btn-primary " href="{{route('users.pdf')}}"> 
+                    <i class="fa fa-file-pdf-o"></i> Generar PDF</a>
+                    @endcan
                 </div>
 
                 <div class="panel-body">

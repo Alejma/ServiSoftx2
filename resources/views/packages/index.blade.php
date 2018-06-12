@@ -8,6 +8,11 @@
                 <div class="panel-heading">
                     Paquetes
 
+                    @can('packages.show')
+                    <a class="btn btn-sm btn-primary " href="{{route('packages.pdf')}}"> 
+                    <i class="fa fa-file-pdf-o"></i> Generar PDF</a>
+                    @endcan
+
                     @can('packages.create')
                     <a href="{{ route('packages.create')}}" class="btn btn-sm btn-primary pull-right">
                         Agregar

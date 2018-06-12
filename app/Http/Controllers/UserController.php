@@ -31,7 +31,7 @@ class UserController extends Controller
 
         $pdf = PDF::loadView('users.pdf', compact('users'));
 
-        return $pdf->download('listado.pdf');
+        return $pdf->download('Usuarios[M&A].pdf');
     }
 
 

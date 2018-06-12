@@ -10,6 +10,10 @@
                 </div>
 
                 <div class="panel-body">
+
+                @include ('packages.partials.error')
+
+
                 	{!! Form::open(['route' => 'packages.store']) !!}
 
                     @include ('packages.partials.form')

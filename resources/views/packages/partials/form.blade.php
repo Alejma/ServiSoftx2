@@ -3,7 +3,7 @@
 	{{Form::number('Peso', null, ['class' => 'form-control'])}}
 </div>
 <div class="form-group">
-	{{ Form::label('Estado', 'Estado')}}
+	{{Form::label('Estado', 'Estado - Tipos de estado [En bogega | En camino | Entregado]')}}
 	{{Form::text('Estado', null, ['class' => 'form-control'])}}
 </div>
 <div class="form-group">

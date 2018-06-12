@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Paquete;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade as PDF;
+use App\Http\Requests\PackageRequest;
 
 class PaqueteController extends Controller
 {
@@ -31,7 +32,7 @@ class PaqueteController extends Controller
 
         $pdf = PDF::loadView('packages.pdf', compact('paquetes'));
 
-        return $pdf->download('listado.pdf');
+        return $pdf->download('inventarioPaquetes.pdf');
     }
 
 
@@ -51,7 +52,7 @@ class PaqueteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PackageRequest $request)
     {
       $paquetes = Paquete::create($request->all());
 

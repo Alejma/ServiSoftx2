@@ -10,6 +10,9 @@
                 </div>
 
                 <div class="panel-body">
+                    @include ('roles.partials.error')
+
+
                     {!! Form::open(['route' => 'roles.store']) !!}
 
                     @include ('roles.partials.form')

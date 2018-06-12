@@ -3,7 +3,9 @@
 @section('content')
 
 <hr>
+<hr>
 
+<a>Inventario de paquetes</a>
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
